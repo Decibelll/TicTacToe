@@ -8,11 +8,21 @@
 
 import UIKit
 
+/*
+The logic behind winning cobinations is the follwing. All possible winning combinations in terms of button tags are created. Every time user does a move it is checked wether user hits the winning combination. In order to reduce the number of combinations to check every time when user does a move a prefilling operation selects only those winning combinations which contain th elast move.
+*/
+
 class WinningCombination
 {
+    // MARK: Properties and instance variables
 	let moves: [Move]
 	
-	class func allWinningCombinations() -> [WinningCombination]
+    // MARK: Class methods
+    
+/** Method provides winning combinations for all cases 
+- returns: array of all possible winning combinations
+*/
+	private class func allWinningCombinations() -> [WinningCombination]
 	{
 		var winningCombinations = [WinningCombination]()
 		
@@ -28,6 +38,10 @@ class WinningCombination
 		return winningCombinations
 	}
 	
+/** Method is used to find the current state of progress of any player.
+- parameter moves: array of all player's moves in the game
+- returns: true if user wins with his moves or false otherwise
+*/
 	class func willWinWithMoves(moves: [Move]) -> Bool
 	{
 		guard let lastMove = moves.last else { return false }
@@ -50,7 +64,11 @@ class WinningCombination
 		return false
 	}
 	
-	class func winningCombinationsForMove( move: Move ) -> [WinningCombination]
+/** Method is used to find all the winning combinations for current move.
+- parameter move: last player's move
+- returns: array of winning combinations selected for this particular turn
+*/
+	private class func winningCombinationsForMove( move: Move ) -> [WinningCombination]
 	{
 		var combinations = [WinningCombination]()
 		for combination in allWinningCombinations() {
@@ -61,11 +79,17 @@ class WinningCombination
 		return combinations
 	}
 	
+    // MARK: Object lifecycle methods
 	init( moves: [Move] )
 	{
 		self.moves = moves
 	}
 	
+    // MARK: Other methods
+/** Method checks whether combination contains provided move
+- parameter move: move to check
+- returns: true if move is contained or false otherwise
+*/
 	func contains( move: Move ) -> Bool
 	{
 		if let _ = moves.indexOf({$0.tag == move.tag}) {

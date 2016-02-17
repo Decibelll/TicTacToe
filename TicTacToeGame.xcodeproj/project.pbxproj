@@ -93,8 +93,8 @@
 		A51EF5461C74D319005E0949 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A51EF5361C74D2CF005E0949 /* Main.storyboard */,
 				A51EF5391C74D2CF005E0949 /* Assets.xcassets */,
+				A51EF5361C74D2CF005E0949 /* Main.storyboard */,
 				A51EF53B1C74D2CF005E0949 /* LaunchScreen.storyboard */,
 			);
 			name = Resources;

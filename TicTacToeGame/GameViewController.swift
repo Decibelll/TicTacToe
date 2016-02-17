@@ -15,13 +15,19 @@ class GameViewController: UIViewController
 	@IBOutlet var buttons: [UIButton]!
 	
 	// MARK: Properties and instance variables
-	var firstX = true
+/** Flag should be set if X player's turn is first or reset otherwise*/
+    var firstX = true
 	
 	private let xTurnString = "X's turn"
 	private let oTurnString = "O's turn"
-	private var _xTurn = true
-	private let _xPlayer = Player()
+
+/** Flag indicates whos turn is now */
+    private var _xTurn = true
+	
+    private let _xPlayer = Player()
 	private let _oPlayer = Player()
+    
+/** Variable stores number of turns made by players*/
 	private var _movesCounter = 0
 
 	// MARK: UIViewController lifecycle methods

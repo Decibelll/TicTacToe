@@ -17,49 +17,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UUy-f9-tTZ">
-                                <rect key="frame" x="164" y="196" width="274" height="208"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUy-f9-tTZ">
+                                <rect key="frame" x="240" y="235" width="120" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIP-Xp-Gdr">
-                                        <rect key="frame" x="97" y="49" width="80" height="30"/>
-                                        <color key="backgroundColor" red="0.94756674619460401" green="1" blue="0.68819104354028759" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                        <color key="backgroundColor" red="0.99324068099335383" green="1" blue="0.35220085213135344" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="mZs-qL-ouY"/>
+                                            <constraint firstAttribute="height" constant="40" id="YBl-qf-Ydo"/>
+                                            <constraint firstAttribute="width" constant="120" id="mZs-qL-ouY" userLabel="width = 120"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Start as X"/>
                                         <connections>
                                             <segue destination="mbc-U2-yLy" kind="show" identifier="StartGameX" id="dLL-03-D2r"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VL-CF-0gc">
-                                        <rect key="frame" x="97" y="129" width="80" height="30"/>
-                                        <color key="backgroundColor" red="0.94756674620000003" green="1" blue="0.68819104350000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="90" width="120" height="40"/>
+                                        <color key="backgroundColor" red="0.99324068099999996" green="1" blue="0.35220085210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Start as O"/>
                                         <connections>
                                             <segue destination="mbc-U2-yLy" kind="show" identifier="StartGameO" id="aGm-qZ-JDk"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="9VL-CF-0gc" secondAttribute="bottom" constant="49" id="0SC-NN-qqL"/>
-                                    <constraint firstAttribute="trailing" secondItem="9VL-CF-0gc" secondAttribute="trailing" constant="97" id="0pv-Ev-odl"/>
+                                    <constraint firstAttribute="bottom" secondItem="9VL-CF-0gc" secondAttribute="bottom" id="0SC-NN-qqL"/>
+                                    <constraint firstAttribute="trailing" secondItem="9VL-CF-0gc" secondAttribute="trailing" id="0pv-Ev-odl"/>
                                     <constraint firstItem="9VL-CF-0gc" firstAttribute="top" secondItem="dIP-Xp-Gdr" secondAttribute="bottom" constant="50" id="1yO-W6-EHB"/>
                                     <constraint firstItem="9VL-CF-0gc" firstAttribute="width" secondItem="dIP-Xp-Gdr" secondAttribute="width" id="Efz-tz-uPZ"/>
-                                    <constraint firstItem="dIP-Xp-Gdr" firstAttribute="top" secondItem="UUy-f9-tTZ" secondAttribute="top" constant="49" id="juN-t8-SFV"/>
-                                    <constraint firstItem="dIP-Xp-Gdr" firstAttribute="leading" secondItem="UUy-f9-tTZ" secondAttribute="leading" constant="97" id="lyh-1Y-0so"/>
-                                    <constraint firstAttribute="trailing" secondItem="dIP-Xp-Gdr" secondAttribute="trailing" constant="97" id="ovl-AT-ggT"/>
-                                    <constraint firstItem="9VL-CF-0gc" firstAttribute="leading" secondItem="UUy-f9-tTZ" secondAttribute="leading" constant="97" id="zu9-ZT-xxZ"/>
+                                    <constraint firstItem="9VL-CF-0gc" firstAttribute="height" secondItem="dIP-Xp-Gdr" secondAttribute="height" id="Ng3-om-Cr8"/>
+                                    <constraint firstItem="dIP-Xp-Gdr" firstAttribute="top" secondItem="UUy-f9-tTZ" secondAttribute="top" id="juN-t8-SFV"/>
+                                    <constraint firstItem="dIP-Xp-Gdr" firstAttribute="leading" secondItem="UUy-f9-tTZ" secondAttribute="leading" id="lyh-1Y-0so"/>
+                                    <constraint firstAttribute="trailing" secondItem="dIP-Xp-Gdr" secondAttribute="trailing" id="ovl-AT-ggT"/>
+                                    <constraint firstItem="9VL-CF-0gc" firstAttribute="leading" secondItem="UUy-f9-tTZ" secondAttribute="leading" id="zu9-ZT-xxZ"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UUy-f9-tTZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JFp-Av-hGa"/>
                             <constraint firstItem="UUy-f9-tTZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XDm-AG-cVi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Teh-MD-BB6"/>
+                    <connections>
+                        <outletCollection property="buttons" destination="dIP-Xp-Gdr" collectionClass="NSMutableArray" id="JEd-JH-D1m"/>
+                        <outletCollection property="buttons" destination="9VL-CF-0gc" id="Qyn-za-wjg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
