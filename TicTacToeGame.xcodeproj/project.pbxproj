@@ -48,7 +48,6 @@
 			children = (
 				A51EF5491C74E206005E0949 /* Models */,
 				A51EF5451C74D30A005E0949 /* View Controllers */,
-				A51EF5441C74D302005E0949 /* Views */,
 				A51EF5311C74D2CF005E0949 /* TicTacToeGame */,
 				A51EF5461C74D319005E0949 /* Resources */,
 				A51EF5301C74D2CF005E0949 /* Products */,
@@ -69,14 +68,6 @@
 				A51EF5321C74D2CF005E0949 /* AppDelegate.swift */,
 				A51EF53E1C74D2CF005E0949 /* Info.plist */,
 			);
-			path = TicTacToeGame;
-			sourceTree = "<group>";
-		};
-		A51EF5441C74D302005E0949 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
 			path = TicTacToeGame;
 			sourceTree = "<group>";
 		};

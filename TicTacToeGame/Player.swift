@@ -10,8 +10,11 @@ import UIKit
 
 class Player
 {
+/** Property keeps all player's moves */
 	var moves = [Move]()
     
+/** Method converts all moved to array of integer tags
+- returns: array of integer tags */
     func allMovesToArray() -> [Int]
     {
         var movesArray = [Int]()

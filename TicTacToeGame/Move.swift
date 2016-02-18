@@ -10,8 +10,12 @@ import UIKit
 
 class Move
 {
+/** Property keeps tag of appropriate button */
 	var tag: Int
 	
+/** Method composes moves array from array of button tags 
+- parameter movesArray: array of buttons tags corresponding to the moves
+- returns: array of user's moves*/
     class func movesFromArray( movesArray: [Int] ) -> [Move]
     {
         var moves = [Move]()
