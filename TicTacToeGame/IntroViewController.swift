@@ -9,6 +9,7 @@
 import UIKit
 import iAd
 
+// User defaults keys
 let gameSettings_Key = "UserDefaults_gameSettings"
 
 class IntroViewController: UIViewController {

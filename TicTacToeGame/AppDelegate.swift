@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationWillResignActive(application: UIApplication)
     {
+        // Synchronize user defaults on resigning active state
 		NSUserDefaults.standardUserDefaults().synchronize()
 	}
 }
