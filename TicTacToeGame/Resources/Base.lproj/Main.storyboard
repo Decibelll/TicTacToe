@@ -5,7 +5,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Intro View Controller-->
+        <!--Tic Tac Toe-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="IntroViewController" customModule="TicTacToeGame" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,7 +63,7 @@
                             <constraint firstItem="UUy-f9-tTZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XDm-AG-cVi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Teh-MD-BB6"/>
+                    <navigationItem key="navigationItem" title="Tic Tac Toe" id="Teh-MD-BB6"/>
                     <connections>
                         <outletCollection property="buttons" destination="dIP-Xp-Gdr" collectionClass="NSMutableArray" id="JEd-JH-D1m"/>
                         <outletCollection property="buttons" destination="9VL-CF-0gc" collectionClass="NSMutableArray" id="Qyn-za-wjg"/>
