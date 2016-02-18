@@ -83,36 +83,62 @@ class GameViewController: UIViewController
     // MARK: IBAction methods
 	@IBAction func buttonTapped( sender: UIButton )
 	{
+        // On button tap there is a simple fade out/in animation: 1-st part the backgroud fades out and then a mark fades in
 		_movesCounter += 1
-		sender.backgroundColor = UIColor.whiteColor()
+        let animationResult1 = {
+            sender.backgroundColor = UIColor.whiteColor()
+        }
+        var animationResult2: () -> ()
 		if _xTurn {
-			sender.setImage(UIImage(named: "x-mark"), forState: .Normal)
+            animationResult2 = {
+                sender.setImage(UIImage(named: "x-mark"), forState: .Normal)
+            }
 			_xPlayer.moves.append(Move(sender.tag))
 			if WinningCombination.willWinWithMoves(_xPlayer.moves){
 				whosTurnLabel.text = nil
-				showWinAlert( "Player X" )
+				animationResult1()
+                animationResult2()
+                showWinAlert( "Player X" )
 				return
 			}
 			else if _movesCounter == 9 {
 				whosTurnLabel.text = nil
+                animationResult1()
+                animationResult2()
 				showDrawAlert()
 				return
 			}
 		}
 		else {
-			sender.setImage(UIImage(named: "o-mark"), forState: .Normal)
+            animationResult2 = {
+                sender.setImage(UIImage(named: "o-mark"), forState: .Normal)
+            }
 			_oPlayer.moves.append(Move(sender.tag))
 			if WinningCombination.willWinWithMoves(_oPlayer.moves){
 				whosTurnLabel.text = nil
+                animationResult1()
+                animationResult2()
 				showWinAlert( "Player O" )
 				return
 			}
 			else if _movesCounter == 9 {
 				whosTurnLabel.text = nil
+                animationResult1()
+                animationResult2()
 				showDrawAlert()
 				return
 			}
 		}
+        
+        UIView.animateWithDuration(0.1, animations: {
+            sender.alpha = 0
+            }) { finished in
+                animationResult1()
+                animationResult2()
+                UIView.animateWithDuration(0.3) {
+                    sender.alpha = 1
+                }
+        }
 		
 		_xTurn = !_xTurn
 		sender.userInteractionEnabled = false
