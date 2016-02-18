@@ -166,6 +166,11 @@ class GameViewController: UIViewController
 				self.navigationController?.popToRootViewControllerAnimated( true )
 			}
 			})
+        alert.addAction(UIAlertAction(title: "Share", style: .Default) { action in
+            dispatch_async(dispatch_get_main_queue()) {
+                self.shareVictory()
+            }
+            })
 		presentViewController( alert, animated: true, completion: nil )
 	}
 	
@@ -223,5 +228,17 @@ class GameViewController: UIViewController
         updateTurnLabel(_xTurn)
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: gameSettings_Key)
         return true
+    }
+    
+    func shareVictory()
+    {
+        let shareString = "Hurray! I won TicTacToe game! Again! Now with " + (_xTurn ? "X " : "O ") + "mark."
+        let controller = UIActivityViewController(activityItems: [shareString], applicationActivities: nil)
+        controller.completionWithItemsHandler = { (activity, finished, items, error) in
+            dispatch_async(dispatch_get_main_queue()) {
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+        }
+        presentViewController( controller, animated: true, completion: nil)
     }
 }
