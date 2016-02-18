@@ -44,12 +44,14 @@ class WinningCombination
 */
 	class func willWinWithMoves(moves: [Move]) -> Bool
 	{
-		guard let lastMove = moves.last else { return false }
-		
+		// Here we make sure we have at least 3 moves for a player
+		guard let lastMove = moves.last where moves.count > 2 else { return false }
 		let winningCombinationsForLastMove = winningCombinationsForMove( lastMove )
-		var count = 0
+		
+		// The initial value is 1 because we automatically count for last move that was used for preselection of winning combinations
+		var count = 1
 		for combination in winningCombinationsForLastMove {
-			for i in 0 ..< moves.count {
+			for i in 0 ..< moves.count - 1 {
 				if combination.contains(moves[i]) {
 					count += 1
 				}
@@ -58,7 +60,7 @@ class WinningCombination
 				return true
 			}
 			else {
-				count = 0
+				count = 1
 			}
 		}
 		return false
