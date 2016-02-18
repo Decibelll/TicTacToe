@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 let gameSettings_Key = "UserDefaults_gameSettings"
 
@@ -23,6 +24,15 @@ class IntroViewController: UIViewController {
         for button in buttons {
             button.layer.cornerRadius = 5
         }
+        
+        // Add advertisement banner
+        let banner = ADBannerView(adType: .Banner)
+        banner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(banner)
+        var constaints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[banner]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["banner": banner])
+        constaints += NSLayoutConstraint.constraintsWithVisualFormat("V:[banner]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["banner": banner])
+        view.addConstraints(constaints)
+        banner.addConstraint(NSLayoutConstraint(item: banner, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 50))
     }
     
     override func viewDidAppear(animated: Bool)
