@@ -230,7 +230,7 @@ class GameViewController: UIViewController
         return true
     }
     
-    func shareVictory()
+    private func shareVictory()
     {
         let shareString = "Hurray! I won TicTacToe game! Again! Now with " + (_xTurn ? "X " : "O ") + "mark."
         let controller = UIActivityViewController(activityItems: [shareString], applicationActivities: nil)
