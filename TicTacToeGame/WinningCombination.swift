@@ -24,18 +24,26 @@ class WinningCombination
 */
 	private class func allWinningCombinations() -> [WinningCombination]
 	{
-		var winningCombinations = [WinningCombination]()
+        // Implement all wnning combinations as a singletone object
+        struct SharedInstance
+        {
+            static let winningCombinations: [WinningCombination] = {
+                var winningCombinations = [WinningCombination]()
+                
+                winningCombinations.append(WinningCombination(moves: [Move(0), Move(1), Move(2)]))
+                winningCombinations.append(WinningCombination(moves: [Move(3), Move(4), Move(5)]))
+                winningCombinations.append(WinningCombination(moves: [Move(6), Move(7), Move(8)]))
+                winningCombinations.append(WinningCombination(moves: [Move(0), Move(3), Move(6)]))
+                winningCombinations.append(WinningCombination(moves: [Move(1), Move(4), Move(7)]))
+                winningCombinations.append(WinningCombination(moves: [Move(2), Move(5), Move(8)]))
+                winningCombinations.append(WinningCombination(moves: [Move(0), Move(4), Move(8)]))
+                winningCombinations.append(WinningCombination(moves: [Move(2), Move(4), Move(6)]))
+                
+                return winningCombinations
+            }()
+        }
 		
-		winningCombinations.append(WinningCombination(moves: [Move(0), Move(1), Move(2)]))
-		winningCombinations.append(WinningCombination(moves: [Move(3), Move(4), Move(5)]))
-		winningCombinations.append(WinningCombination(moves: [Move(6), Move(7), Move(8)]))
-		winningCombinations.append(WinningCombination(moves: [Move(0), Move(3), Move(6)]))
-		winningCombinations.append(WinningCombination(moves: [Move(1), Move(4), Move(7)]))
-		winningCombinations.append(WinningCombination(moves: [Move(2), Move(5), Move(8)]))
-		winningCombinations.append(WinningCombination(moves: [Move(0), Move(4), Move(8)]))
-		winningCombinations.append(WinningCombination(moves: [Move(2), Move(4), Move(6)]))
-		
-		return winningCombinations
+		return SharedInstance.winningCombinations
 	}
 	
 /** Method is used to find the current state of progress of any player.
