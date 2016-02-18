@@ -11,4 +11,13 @@ import UIKit
 class Player
 {
 	var moves = [Move]()
+    
+    func allMovesToArray() -> [Int]
+    {
+        var movesArray = [Int]()
+        for move in moves {
+            movesArray.append( move.tag )
+        }
+        return movesArray
+    }
 }

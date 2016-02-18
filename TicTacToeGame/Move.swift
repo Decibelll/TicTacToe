@@ -12,6 +12,15 @@ class Move
 {
 	var tag: Int
 	
+    class func movesFromArray( movesArray: [Int] ) -> [Move]
+    {
+        var moves = [Move]()
+        for rawMove in movesArray {
+            moves.append(Move(rawMove))
+        }
+        return moves
+    }
+    
 	init( _ tag: Int )
 	{
 		self.tag = tag

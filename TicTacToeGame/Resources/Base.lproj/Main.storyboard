@@ -66,7 +66,7 @@
                     <navigationItem key="navigationItem" id="Teh-MD-BB6"/>
                     <connections>
                         <outletCollection property="buttons" destination="dIP-Xp-Gdr" collectionClass="NSMutableArray" id="JEd-JH-D1m"/>
-                        <outletCollection property="buttons" destination="9VL-CF-0gc" id="Qyn-za-wjg"/>
+                        <outletCollection property="buttons" destination="9VL-CF-0gc" collectionClass="NSMutableArray" id="Qyn-za-wjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,7 +92,7 @@
         <!--Game View Controller-->
         <scene sceneID="bsU-JC-aBE">
             <objects>
-                <viewController id="mbc-U2-yLy" customClass="GameViewController" customModule="TicTacToeGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="mbc-U2-yLy" customClass="GameViewController" customModule="TicTacToeGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PQy-rN-m7r"/>
                         <viewControllerLayoutGuide type="bottom" id="P2P-EE-PgF"/>
